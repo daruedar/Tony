@@ -3,11 +3,14 @@
 				<script type="text/javascript"><!--
 				var coulomb=6.24e18;
 				var avogadro=6.022e23;
-				function getMoleculas(electrones){
+				/*Estas funciones solo aplicar para el hidrogeno gaseosos*/
+				function getMoleculas(electrones){]
+				//Segun la reaccion de la tabla fem 2 electrones producen una molecula de h2(g)
 						var salida=electrones/2;
 						return salida;
 					}
 				function getMoles(moleculas){
+				//Una mol existen avogadro moleculas de H2(g)
 						var salida=moleculas/avogadro;
 						return salida;
 					}
@@ -17,18 +20,22 @@
 						return salida;
 					}
 				function getGramos(moles, pesoMolecular){
-						
 						var salida=moles*pesoMolecular;
+						return salida;
+					}
+				function getGramosx(coulom){
+						var col=0.000010444902025905015;//Un coulomb produce estos gramos de H2(g)
+						var salida=coulom*col;
 						return salida;
 					}
 					
 			--></script>
 	<script type= "text/javascript">
-	var p=getMoles(getMoleculas(coulomb));
-	var g=getGramos(15,2.016);
+	var p=getGramos(getMoles(getMoleculas(coulomb)),2.016);
+	var g=getGramosx(10);
 	//saludar(354);
-	document.write("<br>El numero de gramos que hay en  15 moles de H2  es " + g);
-	//document.write("<br>El numero de moles que produce  1 C es " + g);
+	document.write("<br>El numero de gramos que produce un Coulomb  es " + p);
+	document.write("<br>El numero de gramos que produce  10 C es " + g);
 	</script>
 	</head>
 	<body>
