@@ -1,0 +1,36 @@
+<html>
+	<head>
+				<script type="text/javascript"><!--
+				var coulomb=6.24e18;
+				var avogadro=6.022e23;
+				function getMoleculas(electrones){
+						var salida=electrones/2;
+						return salida;
+					}
+				function getMoles(moleculas){
+						var salida=moleculas/avogadro;
+						return salida;
+					}
+				function getMolesx(coulombs){
+						var aux=0.0000051810029890401855;//numero de moles que produce un coulomb
+						var salida=coulombs*aux;
+						return salida;
+					}
+				function getGramos(moles, pesoMolecular){
+						
+						var salida=moles*pesoMolecular;
+						return salida;
+					}
+					
+			--></script>
+	<script type= "text/javascript">
+	var p=getMoles(getMoleculas(coulomb));
+	var g=getGramos(15,2.016);
+	//saludar(354);
+	document.write("<br>El numero de gramos que hay en  15 moles de H2  es " + g);
+	//document.write("<br>El numero de moles que produce  1 C es " + g);
+	</script>
+	</head>
+	<body>
+	</body>
+</html>
